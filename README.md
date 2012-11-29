@@ -6,7 +6,7 @@ grunt-reduce builds your web application based on the DOM.
 This has a number of advantages to the developer:
 * If the browser can see it, so can grunt-reduce - Develop for the browser not the build system!
 * Minimal configuration needed
-* No build system smells in your markup, jevescript, css etc.
+* No build system smells in your markup, javascript, css etc.
 * It's fast! No intermediate files on disk
 
 
