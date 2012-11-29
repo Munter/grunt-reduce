@@ -9,17 +9,28 @@
 module.exports = function (grunt) {
 
     grunt.registerTask('reduce', 'Description', function () {
-        var AssetGraph = require('assetgraph'),
+        var done = this.async();
+
+        var AssetGraph = require('assetgraph-builder'),
             query = AssetGraph.query,
-            urlTools = require('assetgraph/lib/util/urlTools');
+            urlTools = require('assetgraph-builder/node_modules/assetgraph/lib/util/urlTools');
 
         var config = grunt.config(this.name),
-            rootUrl = urlTools.fsDirToFileUrl(config.root),
-            outRoot = urlTools.fsDirToFileUrl(config.outRoot),
+            rootUrl = urlTools.fsDirToFileUrl(config.root || 'app'),
+            outRoot = urlTools.fsDirToFileUrl(config.outRoot || 'dist'),
             cdnRoot = config.cdnRoot && urlTools.ensureTrailingSlash(config.cdnRoot),
             cdnOutRoot = config.cdnOutRoot && urlTools.fsDirToFileUrl(config.cdnOutRoot);
 
-        require('assetgraph-builder/lib/registerTransforms');
+        var loadAssets = [
+            '**/*.html',
+            '**/.htaccess',
+            '*.txt',
+            'favicon.ico'
+        ]
+
+        if (config.include) {
+            loadAssets = loadAssets.concat(config.include);
+        }
 
         new AssetGraph({ root: rootUrl })
             .on('afterTransform', function (transform, elapsedTime) {
@@ -29,35 +40,28 @@ module.exports = function (grunt) {
                 // These are way too noisy
                 if (err.relationType !== 'JavaScriptCommonJsRequire') {
                     console.warn((err.asset ? err.asset.urlOrDescription + ': ' : '') + err.message);
-                    if (commandLineOptions.stoponwarning) {
-                        process.exit(1);
-                    }
                 }
             })
             .on('error', function (err) {
                 console.error((err.asset ? err.asset.urlOrDescription + ': ' : '') + err.stack);
-                process.exit(1);
             })
             .registerRequireJsConfig()
-            .loadAssets([rootUrl + '**/*.html'])
-            .populate()
-            /*
+            .loadAssets(loadAssets)
             .buildProduction({
                 less: true,
                 optimizePngs: true,
                 optimizeJpgs: true,
-                inlineSize: 4096,
-                manifest: false,
+                inlineSize: config.inlineSize === 0 ? 0 : (config.inlineSize || 4096),
+                manifest: config.manifest || false,
                 asyncScripts: true,
                 cdnRoot: cdnRoot,
-                noCompress: false
+                noCompress: config.pretty || false
             })
-*/
             .writeAssetsToDisc({url: /^file:/}, outRoot)
             .if(cdnRoot)
                 .writeAssetsToDisc({url: query.createPrefixMatcher(cdnRoot)}, cdnOutRoot || outRoot, cdnRoot)
             .endif()
             .writeStatsToStderr()
-            .run();
+            .run(done);
     });
 };
