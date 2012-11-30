@@ -34,9 +34,9 @@ TODO
 ```
 
 # Tools used
-Assetgraph: https://github.com/One-com/assetgraph
-Assetgraph-builder: https://github.com/One-com/assetgraph-builder
-Assetgraph-sprite: https://github.com/One-com/assetgraph-sprite
+* Assetgraph: https://github.com/One-com/assetgraph
+* Assetgraph-builder: https://github.com/One-com/assetgraph-builder
+* Assetgraph-sprite: https://github.com/One-com/assetgraph-sprite
 
 
 ## License
