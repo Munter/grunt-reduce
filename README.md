@@ -33,6 +33,11 @@ Maximal configuration:
 TODO
 ```
 
+# Tools used
+Assetgraph: https://github.com/One-com/assetgraph
+Assetgraph-builder: https://github.com/One-com/assetgraph-builder
+Assetgraph-sprite: https://github.com/One-com/assetgraph-sprite
+
 
 ## License
 Copyright (c) 2012 Peter Müller  
