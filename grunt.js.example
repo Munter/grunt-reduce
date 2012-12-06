@@ -1,0 +1,20 @@
+/*
+This is an example configuration for grunt-reduce
+*/
+module.exports = function( grunt ) {
+  'use strict';
+
+  grunt.initConfig({
+    reduce: {
+        root: 'app',
+        outRoot: 'dist',
+        include: [
+            'myPublicFolder/*'
+        ]
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-reduce');
+  
+  grunt.registerTask('default', 'reduce');
+};
