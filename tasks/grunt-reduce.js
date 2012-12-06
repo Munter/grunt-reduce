@@ -49,8 +49,10 @@ module.exports = function (grunt) {
             .loadAssets(loadAssets)
             .buildProduction({
                 less: true,
-                optimizePngs: true,
-                optimizeJpgs: true,
+                jpegtran: true,
+                pngquant: true,
+                pngcrush: true,
+                optipng: true,
                 inlineSize: config.inlineSize === 0 ? 0 : (config.inlineSize || 4096),
                 manifest: config.manifest || false,
                 asyncScripts: true,
