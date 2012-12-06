@@ -15,7 +15,7 @@ module.exports = function (grunt) {
             query = AssetGraph.query,
             urlTools = require('assetgraph-builder/node_modules/assetgraph/lib/util/urlTools');
 
-        var config = grunt.config(this.name),
+        var config = grunt.config(this.name) || {},
             rootUrl = urlTools.fsDirToFileUrl(config.root || 'app'),
             outRoot = urlTools.fsDirToFileUrl(config.outRoot || 'dist'),
             cdnRoot = config.cdnRoot && urlTools.ensureTrailingSlash(config.cdnRoot),
@@ -25,7 +25,7 @@ module.exports = function (grunt) {
             '**/*.html',
             '**/.htaccess',
             '*.txt',
-            'favicon.ico'
+            '*.ico'
         ]
 
         if (config.include) {
