@@ -25,9 +25,6 @@
   "engines": {
     "node": "*"
   },
-  "scripts": {
-    "test": "grunt test"
-  },
   "dependencies": {
     "assetgraph-builder": ">=1.3.0"
   },
