@@ -11,9 +11,9 @@ module.exports = function (grunt) {
     grunt.registerTask('reduce', 'Description', function () {
         var done = this.async();
 
-        var AssetGraph = require('assetgraph-builder-munter'),
+        var AssetGraph = require('assetgraph-builder'),
             query = AssetGraph.query,
-            urlTools = require('assetgraph-builder-munter/node_modules/assetgraph/lib/util/urlTools');
+            urlTools = require('assetgraph-builder/node_modules/assetgraph/lib/util/urlTools');
 
         var config = grunt.config(this.name) || {},
             rootUrl = urlTools.fsDirToFileUrl(config.root || 'app'),
