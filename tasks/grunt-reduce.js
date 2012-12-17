@@ -19,7 +19,10 @@ module.exports = function (grunt) {
             rootUrl = urlTools.fsDirToFileUrl(config.root || 'app'),
             outRoot = urlTools.fsDirToFileUrl(config.outRoot || 'dist'),
             cdnRoot = config.cdnRoot && urlTools.ensureTrailingSlash(config.cdnRoot),
-            cdnOutRoot = config.cdnOutRoot && urlTools.fsDirToFileUrl(config.cdnOutRoot);
+            cdnOutRoot = config.cdnOutRoot && urlTools.fsDirToFileUrl(config.cdnOutRoot),
+            optimizeImages = config.optimizeImages === false ? false : true,
+            less = config.less === false ? false : true,
+            asyncScripts = config.asyncScripts === false ? false : true;
 
         var loadAssets = [
             '**/*.html',
@@ -48,14 +51,14 @@ module.exports = function (grunt) {
             .registerRequireJsConfig()
             .loadAssets(loadAssets)
             .buildProduction({
-                less: true,
-                jpegtran: true,
-                pngquant: true,
-                pngcrush: true,
-                optipng: true,
+                less: less,
+                jpegtran: optimizeImages,
+                pngquant: optimizeImages,
+                pngcrush: optimizeImages,
+                optipng: optimizeImages,
                 inlineSize: config.inlineSize === 0 ? 0 : (config.inlineSize || 4096),
                 manifest: config.manifest || false,
-                asyncScripts: true,
+                asyncScripts: asyncScripts,
                 cdnRoot: cdnRoot,
                 noCompress: config.pretty || false
             })
