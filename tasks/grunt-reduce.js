@@ -22,7 +22,8 @@ module.exports = function (grunt) {
             cdnOutRoot = config.cdnOutRoot && urlTools.fsDirToFileUrl(config.cdnOutRoot),
             optimizeImages = config.optimizeImages === false ? false : true,
             less = config.less === false ? false : true,
-            asyncScripts = config.asyncScripts === false ? false : true;
+            asyncScripts = config.asyncScripts === false ? false : true,
+            sharedBundles = config.sharedBundles === false ? false : true;
 
         var loadAssets = [
             '**/*.html',
@@ -60,7 +61,8 @@ module.exports = function (grunt) {
                 manifest: config.manifest || false,
                 asyncScripts: asyncScripts,
                 cdnRoot: cdnRoot,
-                noCompress: config.pretty || false
+                noCompress: config.pretty || false,
+                sharedBundles: sharedBundles
             })
             .writeAssetsToDisc({url: /^file:/}, outRoot)
             .if(cdnRoot)
