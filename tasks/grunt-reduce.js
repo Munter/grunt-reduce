@@ -33,7 +33,7 @@ module.exports = function (grunt) {
         ]
 
         if (config.include) {
-            loadAssets = loadAssets.concat(config.include);
+            loadAssets = config.include;
         }
 
         new AssetGraph({ root: rootUrl })
