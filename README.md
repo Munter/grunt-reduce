@@ -1,3 +1,6 @@
+[![NPM version](https://badge.fury.io/js/grunt-reduce.png)](http://badge.fury.io/js/grunt-reduce)
+[![Dependency Status](https://david-dm.org/Munter/grunt-reduce.png)](https://david-dm.org/Munter/grunt-reduce)
+
 # grunt-reduce
 
 A grunt kitchen that reduces your web ingredients down to their essence for optimal serving. Bon appétit!
