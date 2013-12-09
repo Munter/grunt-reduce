@@ -1,5 +1,6 @@
 [![NPM version](https://badge.fury.io/js/grunt-reduce.png)](http://badge.fury.io/js/grunt-reduce)
 [![Dependency Status](https://david-dm.org/Munter/grunt-reduce.png)](https://david-dm.org/Munter/grunt-reduce)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Munter/grunt-reduce/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 # grunt-reduce
 
@@ -138,5 +139,4 @@ Copyright (c) 2012 Peter Müller
 Licensed under the MIT license.
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Munter/grunt-reduce/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
