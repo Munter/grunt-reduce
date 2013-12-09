@@ -136,3 +136,7 @@ Note about data-uris: IE versions lower than 8 do not understand data-uris. grun
 ## License
 Copyright (c) 2012 Peter Müller
 Licensed under the MIT license.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Munter/grunt-reduce/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
