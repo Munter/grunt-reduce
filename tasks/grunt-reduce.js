@@ -26,8 +26,8 @@ module.exports = function (grunt) {
             sharedBundles = config.sharedBundles === false ? false : true;
 
         var loadAssets = [
-            '**/*.html',
-            '**/.htaccess',
+            '*.html',
+            '.htaccess',
             '*.txt',
             '*.ico'
         ]
