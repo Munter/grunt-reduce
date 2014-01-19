@@ -59,6 +59,16 @@ module.exports = function( grunt ) {
           '*.ico'
         ],
 
+        // Browser support configuration to send to autoprefixer.
+        // If any value is set, any `prefixfree.js` script reference will also be removed
+        // Browser support syntax documentation: https://github.com/ai/autoprefixer#browsers
+        autoprefix: [
+            '> 1%',
+            'last 2 versions',
+            'Firefox ESR',
+            'Opera 12.1'
+        ],
+
         // Compile less files and remove less.js from application
         less: true, // Default: true
 

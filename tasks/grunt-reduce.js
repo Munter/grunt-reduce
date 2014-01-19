@@ -1,3 +1,5 @@
+/*jshint onevar:false*/
+
 /*
  * grunt-reduce
  * https://github.com/munter/grunt-reduce
@@ -30,15 +32,26 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.txt',
             '*.ico'
-        ]
+        ];
 
         if (config.include) {
             loadAssets = config.include;
         }
 
+        var autoprefix = [
+            '> 1%',
+            'last 2 versions',
+            'Firefox ESR',
+            'Opera 12.1'
+        ];
+
+        if (config.autoprefix) {
+            autoprefix = config.autoprefix;
+        }
+
         new AssetGraph({ root: rootUrl })
             .on('afterTransform', function (transform, elapsedTime) {
-                console.log((elapsedTime / 1000).toFixed(3) + " secs: " + transform.name);
+                console.log((elapsedTime / 1000).toFixed(3) + ' secs: ' + transform.name);
             })
             .on('warn', function (err) {
                 // These are way too noisy
@@ -58,6 +71,7 @@ module.exports = function (grunt) {
                 pngcrush: optimizeImages,
                 optipng: optimizeImages,
                 inlineSize: config.inlineSize === 0 ? 0 : (config.inlineSize || 4096),
+                autoprefix: autoprefix,
                 manifest: config.manifest || false,
                 asyncScripts: asyncScripts,
                 cdnRoot: cdnRoot,
