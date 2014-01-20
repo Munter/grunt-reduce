@@ -26,7 +26,8 @@
     "node": "*"
   },
   "dependencies": {
-    "assetgraph-builder": "=1.8.5"
+    "assetgraph-builder": "=1.8.5",
+    "url-tools": "git://github.com/assetgraph/url-tools.git"
   },
   "devDependencies": {
     "grunt": "~0.3.17"
