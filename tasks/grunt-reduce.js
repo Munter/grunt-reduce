@@ -15,7 +15,7 @@ module.exports = function (grunt) {
 
         var AssetGraph = require('assetgraph-builder'),
             query = AssetGraph.query,
-            urlTools = require('url-tools');
+            urlTools = require('urltools');
 
         var config = grunt.config(this.name) || {},
             rootUrl = urlTools.fsDirToFileUrl(config.root || 'app'),
