@@ -75,7 +75,7 @@ module.exports = function (grunt) {
                 manifest: config.manifest || false,
                 asyncScripts: asyncScripts,
                 cdnRoot: cdnRoot,
-                prettyPrint: config.pretty || false,
+                noCompress: config.pretty || false,
                 sharedBundles: sharedBundles
             })
             .writeAssetsToDisc({url: /^file:/}, outRoot)
