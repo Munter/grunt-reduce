@@ -78,9 +78,9 @@ module.exports = function (grunt) {
                 noCompress: config.pretty || false,
                 sharedBundles: sharedBundles
             })
-            .writeAssetsToDisc({url: /^file:/}, outRoot)
+            .writeAssetsToDisc({url: /^file:/, isLoaded: true}, outRoot)
             .if(cdnRoot)
-                .writeAssetsToDisc({url: query.createPrefixMatcher(cdnRoot)}, cdnOutRoot || outRoot, cdnRoot)
+                .writeAssetsToDisc({url: query.createPrefixMatcher(cdnRoot), isLoaded: true}, cdnOutRoot || outRoot, cdnRoot)
             .endif()
             .writeStatsToStderr()
             .run(done);
