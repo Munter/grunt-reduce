@@ -27,6 +27,15 @@ module.exports = function (grunt) {
             asyncScripts = config.asyncScripts === false ? false : true,
             sharedBundles = config.sharedBundles === false ? false : true;
 
+        // Support for locales
+        var locales;
+        if (typeof config.locales === 'string') {
+            // split the defined locales and normalize them
+            locales = config.locales.split(',').map(function (localeId) {
+                return localeId && localeId.replace(/-/g, '_').toLowerCase();
+            });
+        }
+
         var loadAssets = [
             '*.html',
             '.htaccess',
@@ -76,7 +85,8 @@ module.exports = function (grunt) {
                 asyncScripts: asyncScripts,
                 cdnRoot: cdnRoot,
                 noCompress: config.pretty || false,
-                sharedBundles: sharedBundles
+                sharedBundles: sharedBundles,
+                localeIds: locales
             })
             .writeAssetsToDisc({url: /^file:/, isLoaded: true}, outRoot)
             .if(cdnRoot)
