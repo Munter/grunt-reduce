@@ -138,6 +138,29 @@ When using this technique it is recommended to have a seperate dom element for e
 Note about data-uris: IE versions lower than 8 do not understand data-uris. grunt-reduce adds a fallback to get the original image using conditional comments for these old IE versions.
 
 
+# Internationalization
+Internationalization is optional, and is done by parsing in a `locales` key to the grunt reduce configration like so:
+
+``` javascript
+module.exports = function( grunt ) {
+  'use strict';
+
+  grunt.initConfig({
+    reduce: {
+        // Source folder
+        root: 'app', // Default: 'app',
+
+        // Build destination folder
+        outRoot: 'dist', // Default: 'dist',
+        locales: 'da,en'
+    }
+  })
+}
+```
+
+Please read the [internationalization documentation](https://github.com/assetgraph/assetgraph-builder#internationalization) in Asset Graph Builder project for more information on the subject.
+
+
 # Tools used
 * Assetgraph: https://github.com/One-com/assetgraph
 * Assetgraph-builder: https://github.com/One-com/assetgraph-builder
