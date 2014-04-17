@@ -139,7 +139,7 @@ Note about data-uris: IE versions lower than 8 do not understand data-uris. grun
 
 
 # Internationalization
-Internationalization is optional, and is done by parsing in a `locales` key to the grunt reduce configration like so:
+Internationalization is optional, and is done by parsing in a `locales` key to the grunt reduce configuration like so:
 
 ``` javascript
 module.exports = function( grunt ) {
@@ -152,7 +152,12 @@ module.exports = function( grunt ) {
 
         // Build destination folder
         outRoot: 'dist', // Default: 'dist',
-        locales: 'da,en'
+
+        // Output languages
+        locales: [
+            'da',
+            'en'
+        ]
     }
   })
 }

@@ -28,13 +28,10 @@ module.exports = function (grunt) {
             sharedBundles = config.sharedBundles === false ? false : true;
 
         // Support for locales
-        var locales;
-        if (typeof config.locales === 'string') {
-            // split the defined locales and normalize them
-            locales = config.locales.split(',').map(function (localeId) {
-                return localeId && localeId.replace(/-/g, '_').toLowerCase();
-            });
-        }
+        var localeIds = (config.locales || []).map(function (localeId) {
+            // Normalize localeId
+            return localeId && localeId.replace(/-/g, '_').toLowerCase();
+        });
 
         var loadAssets = [
             '*.html',
@@ -86,7 +83,7 @@ module.exports = function (grunt) {
                 cdnRoot: cdnRoot,
                 noCompress: config.pretty || false,
                 sharedBundles: sharedBundles,
-                localeIds: locales
+                localeIds: localeIds
             })
             .writeAssetsToDisc({url: /^file:/, isLoaded: true}, outRoot)
             .if(cdnRoot)
