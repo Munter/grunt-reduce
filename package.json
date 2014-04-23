@@ -26,7 +26,7 @@
     "node": "*"
   },
   "dependencies": {
-    "assetgraph-builder": "~1.8.37",
+    "assetgraph-builder": "^1.8.38",
     "urltools": "0.1.0"
   },
   "devDependencies": {
