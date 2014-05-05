@@ -167,9 +167,9 @@ Please read the [internationalization documentation](https://github.com/assetgra
 
 
 # Tools used
-* Assetgraph: https://github.com/One-com/assetgraph
-* Assetgraph-builder: https://github.com/One-com/assetgraph-builder
-* Assetgraph-sprite: https://github.com/One-com/assetgraph-sprite
+* Assetgraph: https://github.com/assetgraph/assetgraph
+* Assetgraph-builder: https://github.com/assetgraph/assetgraph-builder
+* Assetgraph-sprite: https://github.com/assetgraph/assetgraph-sprite
 
 
 ## License
