@@ -71,6 +71,7 @@ module.exports = function (grunt) {
             .registerRequireJsConfig()
             .loadAssets(loadAssets)
             .buildProduction({
+                recursive: true,
                 less: less,
                 jpegtran: optimizeImages,
                 pngquant: optimizeImages,
@@ -83,6 +84,7 @@ module.exports = function (grunt) {
                 cdnRoot: cdnRoot,
                 noCompress: config.pretty || false,
                 sharedBundles: sharedBundles,
+                stripDebug: true,
                 localeIds: localeIds
             })
             .writeAssetsToDisc({url: /^file:/, isLoaded: true}, outRoot)
