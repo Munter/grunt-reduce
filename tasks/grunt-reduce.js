@@ -22,6 +22,7 @@ module.exports = function (grunt) {
             outRoot = urlTools.fsDirToFileUrl(config.outRoot || 'dist'),
             cdnRoot = config.cdnRoot && urlTools.ensureTrailingSlash(config.cdnRoot),
             cdnOutRoot = config.cdnOutRoot && urlTools.fsDirToFileUrl(config.cdnOutRoot),
+            canonicalUrl = config.canonicalUrl && urlTools.ensureTrailingSlash(config.canonicalUrl),
             optimizeImages = config.optimizeImages === false ? false : true,
             less = config.less === false ? false : true,
             asyncScripts = config.asyncScripts === false ? false : true,
@@ -72,6 +73,8 @@ module.exports = function (grunt) {
             .loadAssets(loadAssets)
             .buildProduction({
                 recursive: true,
+                canonicalUrl: canonicalUrl,
+                browsers: config.browsers,
                 less: less,
                 jpegtran: optimizeImages,
                 pngquant: optimizeImages,
