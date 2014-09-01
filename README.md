@@ -59,10 +59,9 @@ module.exports = function( grunt ) {
           '*.ico'
         ],
 
-        // Browser support configuration to send to autoprefixer.
-        // If any value is set, any `prefixfree.js` script reference will also be removed
+        // Browser support configuration to send to autoprefixer and other transforms.
         // Browser support syntax documentation: https://github.com/ai/autoprefixer#browsers
-        autoprefix: [
+        browsers: [
             '> 1%',
             'last 2 versions',
             'Firefox ESR',

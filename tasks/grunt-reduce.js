@@ -15,7 +15,8 @@ module.exports = function (grunt) {
 
         var AssetGraph = require('assetgraph-builder'),
             query = AssetGraph.query,
-            urlTools = require('urltools');
+            urlTools = require('urltools'),
+            chalk = require('chalk');
 
         var config = grunt.config(this.name) || {},
             rootUrl = urlTools.fsDirToFileUrl(config.root || 'app'),
@@ -45,7 +46,7 @@ module.exports = function (grunt) {
             loadAssets = config.include;
         }
 
-        var autoprefix = [
+        var browsers = [
             '> 1%',
             'last 2 versions',
             'Firefox ESR',
@@ -53,7 +54,12 @@ module.exports = function (grunt) {
         ];
 
         if (config.autoprefix) {
-            autoprefix = config.autoprefix;
+            grunt.log.writeln(chalk.yellow(' ⚠ The "autoprefix" property has been deprecated and replaced with "browsers". Please update your grunt-reduce config.'));
+            browsers = config.autoprefix;
+        }
+
+        if (config.browsers) {
+            browsers = config.browsers;
         }
 
         new AssetGraph({ root: rootUrl })
@@ -74,14 +80,13 @@ module.exports = function (grunt) {
             .buildProduction({
                 recursive: true,
                 canonicalUrl: canonicalUrl,
-                browsers: config.browsers,
+                browsers: browsers,
                 less: less,
                 jpegtran: optimizeImages,
                 pngquant: optimizeImages,
                 pngcrush: optimizeImages,
                 optipng: optimizeImages,
                 inlineSize: config.inlineSize === 0 ? 0 : (config.inlineSize || 4096),
-                autoprefix: autoprefix,
                 manifest: config.manifest || false,
                 asyncScripts: asyncScripts,
                 cdnRoot: cdnRoot,
