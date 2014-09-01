@@ -66,18 +66,7 @@ module.exports = function (grunt) {
         }
 
         new AssetGraph({ root: rootUrl })
-            .on('afterTransform', function (transform, elapsedTime) {
-                console.log((elapsedTime / 1000).toFixed(3) + ' secs: ' + transform.name);
-            })
-            .on('warn', function (err) {
-                // These are way too noisy
-                if (err.relationType !== 'JavaScriptCommonJsRequire') {
-                    console.warn((err.asset ? err.asset.urlOrDescription + ': ' : '') + err.message);
-                }
-            })
-            .on('error', function (err) {
-                console.error((err.asset ? err.asset.urlOrDescription + ': ' : '') + err.stack);
-            })
+            .logEvents()
             .registerRequireJsConfig()
             .loadAssets(loadAssets)
             .buildProduction({
