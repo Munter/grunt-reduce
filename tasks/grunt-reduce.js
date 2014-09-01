@@ -30,10 +30,13 @@ module.exports = function (grunt) {
             sharedBundles = config.sharedBundles === false ? false : true;
 
         // Support for locales
-        var localeIds = (config.locales || []).map(function (localeId) {
-            // Normalize localeId
-            return localeId && localeId.replace(/-/g, '_').toLowerCase();
-        });
+        var localeIds;
+        if (Array.isArray(config.locales)) {
+            localeIds = config.locales.map(function (localeId) {
+                // Normalize localeId
+                return localeId && localeId.replace(/-/g, '_').toLowerCase();
+            });
+        }
 
         var loadAssets = [
             '*.html',
