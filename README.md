@@ -68,6 +68,9 @@ module.exports = function( grunt ) {
             'Opera 12.1'
         ],
 
+        // Compile scss files
+        scss: true, // Default: true
+
         // Compile less files and remove less.js from application
         less: true, // Default: true
 

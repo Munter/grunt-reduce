@@ -26,6 +26,7 @@ module.exports = function (grunt) {
             canonicalUrl = config.canonicalUrl && urlTools.ensureTrailingSlash(config.canonicalUrl),
             optimizeImages = config.optimizeImages === false ? false : true,
             less = config.less === false ? false : true,
+            scss = config.css === false ? false : true,
             asyncScripts = config.asyncScripts === false ? false : true,
             sharedBundles = config.sharedBundles === false ? false : true;
 
@@ -74,6 +75,7 @@ module.exports = function (grunt) {
                 canonicalUrl: canonicalUrl,
                 browsers: browsers,
                 less: less,
+                scss: scss,
                 optimizeImages: optimizeImages,
                 inlineSize: config.inlineSize === 0 ? 0 : (config.inlineSize || 4096),
                 manifest: config.manifest || false,
