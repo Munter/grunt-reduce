@@ -26,7 +26,7 @@ module.exports = function (grunt) {
             canonicalUrl = config.canonicalUrl && urlTools.ensureTrailingSlash(config.canonicalUrl),
             optimizeImages = config.optimizeImages === false ? false : true,
             less = config.less === false ? false : true,
-            scss = config.css === false ? false : true,
+            scss = config.scss === false ? false : true,
             asyncScripts = config.asyncScripts === false ? false : true,
             sharedBundles = config.sharedBundles === false ? false : true;
 
