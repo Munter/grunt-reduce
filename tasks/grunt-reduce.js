@@ -10,7 +10,7 @@
 
 module.exports = function (grunt) {
 
-    grunt.registerTask('reduce', 'Description', function () {
+    grunt.registerMultiTask('reduce', 'Description', function () {
         var done = this.async();
 
         var AssetGraph = require('assetgraph-builder'),
@@ -18,7 +18,7 @@ module.exports = function (grunt) {
             urlTools = require('urltools'),
             chalk = require('chalk');
 
-        var config = grunt.config(this.name) || {},
+        var config = this.options(),
             rootUrl = urlTools.fsDirToFileUrl(config.root || 'app'),
             outRoot = urlTools.fsDirToFileUrl(config.outRoot || 'dist'),
             cdnRoot = config.cdnRoot && urlTools.ensureTrailingSlash(config.cdnRoot),

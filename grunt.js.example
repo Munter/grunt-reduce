@@ -6,11 +6,21 @@ module.exports = function( grunt ) {
 
   grunt.initConfig({
     reduce: {
-        root: 'app',
-        outRoot: 'dist',
-        include: [
-            'myPublicFolder/*'
-        ]
+      taskOne : {
+        options : {
+          root: 'app',
+          outRoot: 'dist',
+          include: [
+              'myPublicFolder/*'
+          ]
+        }
+      },
+      taskTwo : {
+        options : {
+          root: 'some-other-app',
+          outRoot: 'dist/some-other-dist'
+        }
+      }
     }
   });
 
