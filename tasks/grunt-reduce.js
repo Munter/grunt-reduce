@@ -27,6 +27,7 @@ module.exports = function (grunt) {
             optimizeImages = config.optimizeImages === false ? false : true,
             less = config.less === false ? false : true,
             scss = config.scss === false ? false : true,
+            fileRev = config.fileRev === false ? false : true,
             asyncScripts = config.asyncScripts === false ? false : true,
             sharedBundles = config.sharedBundles === false ? false : true;
 
@@ -76,6 +77,7 @@ module.exports = function (grunt) {
                 browsers: browsers,
                 less: less,
                 scss: scss,
+                noFileRev: !fileRev,
                 optimizeImages: optimizeImages,
                 inlineSize: config.inlineSize === 0 ? 0 : (config.inlineSize || 4096),
                 manifest: config.manifest || false,

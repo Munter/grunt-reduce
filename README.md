@@ -78,6 +78,9 @@ module.exports = function( grunt ) {
         // For maximum efficiency install jpegtran, optipng, pngcrush and pngquant
         optimizeImages: true, // Default: true
 
+        // Revision file names with the md5 sum of the file content and move to /static/
+        fileRev: true, // Default: true
+
         // Create a cache manifest file
         // If one already exists it will be ammended with static assets
         manifest: false, // Default: false
