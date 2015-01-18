@@ -1,8 +1,8 @@
-[![NPM version](https://badge.fury.io/js/grunt-reduce.png)](http://badge.fury.io/js/grunt-reduce)
+# grunt-reduce
+
+[![NPM version](https://badge.fury.io/js/grunt-reduce.svg)](http://badge.fury.io/js/grunt-reduce)
 [![Dependency Status](https://david-dm.org/Munter/grunt-reduce.png)](https://david-dm.org/Munter/grunt-reduce)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Munter/grunt-reduce/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
-# grunt-reduce
 
 A grunt kitchen that reduces your web ingredients down to their essence for optimal serving. Bon appétit!
 
