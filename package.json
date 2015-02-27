@@ -30,9 +30,7 @@
     "chalk": "^1.0.0",
     "urltools": "0.2.0"
   },
-  "devDependencies": {
-    "grunt": "~0.3.17"
-  },
+  "devDependencies": {},
   "keywords": [
     "gruntplugin",
     "webperf",
