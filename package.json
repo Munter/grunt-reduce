@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "assetgraph-builder": "^2.11.0",
-    "chalk": "^0.5.1",
+    "chalk": "^1.0.0",
     "urltools": "0.2.0"
   },
   "devDependencies": {
