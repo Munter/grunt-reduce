@@ -72,6 +72,7 @@ module.exports = function (grunt) {
             .registerRequireJsConfig()
             .loadAssets(loadAssets)
             .buildProduction({
+                angular: config.angular,
                 recursive: true,
                 canonicalUrl: canonicalUrl,
                 browsers: browsers,

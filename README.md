@@ -68,6 +68,9 @@ module.exports = function( grunt ) {
             'Opera 12.1'
         ],
 
+        // Add Angular.js annotations with ng-annotate
+        angular: false, // Default: false
+
         // Compile scss files
         scss: true, // Default: true
 
@@ -180,6 +183,3 @@ Please read the [internationalization documentation](https://github.com/assetgra
 ## License
 Copyright (c) 2012 Peter Müller
 Licensed under the MIT license.
-
-
-
