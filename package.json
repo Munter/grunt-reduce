@@ -1,7 +1,7 @@
 {
   "name": "grunt-reduce",
   "description": "A grunt kitchen that reduces your web ingredients down to their essence for optimal serving. Bon appétit",
-  "version": "1.5.0",
+  "version": "2.0.0",
   "homepage": "https://github.com/munter/grunt-reduce",
   "author": {
     "name": "Peter Müller",
