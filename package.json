@@ -21,7 +21,7 @@
     "node": "*"
   },
   "dependencies": {
-    "assetgraph-builder": "^3.11.0",
+    "assetgraph-builder": "^4.0.0",
     "chalk": "^1.1.1",
     "urltools": "0.2.0"
   },
