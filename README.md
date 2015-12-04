@@ -81,6 +81,9 @@ module.exports = function( grunt ) {
         // For maximum efficiency install jpegtran, optipng, pngcrush and pngquant
         optimizeImages: true, // Default: true
 
+        // Add source maps for all transpiling and bundling
+        sourceMaps: true, // Default: true
+
         // Revision file names with the md5 sum of the file content and move to /static/
         fileRev: true, // Default: true
 
