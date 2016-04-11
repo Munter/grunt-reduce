@@ -23,7 +23,7 @@
   "dependencies": {
     "assetgraph-builder": "^4.0.1",
     "chalk": "^1.1.1",
-    "urltools": "0.2.0"
+    "urltools": "0.2.1"
   },
   "devDependencies": {},
   "keywords": [
