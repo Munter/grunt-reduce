@@ -72,7 +72,6 @@ module.exports = function (grunt) {
 
         new AssetGraph({ root: rootUrl })
             .logEvents()
-            .registerRequireJsConfig()
             .loadAssets(loadAssets)
             .buildProduction({
                 angular: config.angular,
