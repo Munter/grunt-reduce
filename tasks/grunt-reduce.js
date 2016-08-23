@@ -31,7 +31,8 @@ module.exports = function (grunt) {
             fileRev = config.fileRev === false ? false : true,
             asyncScripts = config.asyncScripts === false ? false : true,
             sharedBundles = config.sharedBundles === false ? false : true,
-            subResourceIntegrity = config.subResourceIntegrity === false ? false : true;
+            subResourceIntegrity = config.subResourceIntegrity === false ? false : true,
+            contentSecurityPolicy = config.contentSecurityPolicy === false ? false : true;
 
         // Support for locales
         var localeIds;
@@ -91,7 +92,8 @@ module.exports = function (grunt) {
                 sharedBundles: sharedBundles,
                 stripDebug: !(config.pretty || false),
                 localeIds: localeIds,
-                subResourceIntegrity: subResourceIntegrity
+                subResourceIntegrity: subResourceIntegrity,
+                contentSecurityPolicy: contentSecurityPolicy
             })
             .writeAssetsToDisc({url: /^file:/, isLoaded: true}, outRoot)
             .if(cdnRoot)
