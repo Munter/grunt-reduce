@@ -90,6 +90,26 @@ module.exports = function (grunt) {
                 sharedBundles: sharedBundles,
                 stripDebug: !(config.pretty || false),
                 localeIds: localeIds
+
+                // Available options which are not used
+                // version: commandLineOptions.version,
+                // sourcesContent: commandLineOptions.sourcescontent,
+                // contentSecurityPolicy: commandLineOptions.contentsecuritypolicy,
+                // subResourceIntegrity: commandLineOptions.subresourceintegrity,
+                // inlineByRelationType: inlineByRelationType,
+                // gzip: commandLineOptions.gzip,
+                // defines: defines,
+                // reservedNames: reservedNames,
+                // localeCookieName: commandLineOptions.localecookiename,
+                // defaultLocaleId: defaultLocaleId,
+                // negotiateManifest: commandLineOptions.negotiatemanifest,
+                // deferScripts: commandLineOptions.deferscripts,
+                // svgo: commandLineOptions.svgo,
+                // minify: commandLineOptions.minify,
+                // pretty: commandLineOptions.pretty,
+                // removeDeadIfs: commandLineOptions.removedeadifs,
+                // addInitialHtmlExtension: commandLineOptions.addinitialhtmlextension,
+                // javaScriptSerializationOptions: javaScriptSerializationOptions
             })
             .writeAssetsToDisc({url: /^file:/, isLoaded: true}, outRoot)
             .if(cdnRoot)
