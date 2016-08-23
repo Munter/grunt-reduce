@@ -30,7 +30,9 @@ module.exports = function (grunt) {
             scss = config.scss === false ? false : true,
             fileRev = config.fileRev === false ? false : true,
             asyncScripts = config.asyncScripts === false ? false : true,
-            sharedBundles = config.sharedBundles === false ? false : true;
+            sharedBundles = config.sharedBundles === false ? false : true,
+            subResourceIntegrity = config.subResourceIntegrity === false ? false : true,
+            contentSecurityPolicy = config.contentSecurityPolicy === false ? false : true;
 
         // Support for locales
         var localeIds;
@@ -70,7 +72,6 @@ module.exports = function (grunt) {
 
         new AssetGraph({ root: rootUrl })
             .logEvents()
-            .registerRequireJsConfig()
             .loadAssets(loadAssets)
             .buildProduction({
                 angular: config.angular,
@@ -89,7 +90,9 @@ module.exports = function (grunt) {
                 noCompress: config.pretty || false,
                 sharedBundles: sharedBundles,
                 stripDebug: !(config.pretty || false),
-                localeIds: localeIds
+                localeIds: localeIds,
+                subResourceIntegrity: subResourceIntegrity,
+                contentSecurityPolicy: contentSecurityPolicy
             })
             .writeAssetsToDisc({url: /^file:/, isLoaded: true}, outRoot)
             .if(cdnRoot)
